@@ -1,7 +1,7 @@
 const productsElement = document.querySelector(".cards");
 
 const consultProducts = async () => {
-  const allProducts = await fetch("http://localhost:3001/product");
+  const allProducts = await fetch("https://tienda-online-node.herokuapp.com/product");
   const res = await allProducts.json();
   productCard(res);
 };
@@ -25,7 +25,7 @@ function productCard(res) {
 
 const searchProduct = async (name) => {
   const searchProduct = await fetch(
-    `http://localhost:3001/product?name=${name}`
+    `https://tienda-online-node.herokuapp.com/product?name=${name}`
   );
   const response = await searchProduct.json();
   searchProducts(response);
@@ -46,7 +46,7 @@ function searchProducts(res) {
     res.forEach((p) => {
       searchHTML = `
       <div class="card" style="width: 18rem;">
-      <img src=${p.url_image} class="card-img-top" alt="..." width="380px" height="260px">
+      <img src=${p.url_image} class="card-img-top"  width="380px" height="260px">
       <hr>
       <div class="card-body">
         <p class="card-text">${p.name}</p>
@@ -75,7 +75,7 @@ buttonSearch.forEach(function (btn) {
 
 const consultCategoryById = async (id) => {
   const categoriesId = await fetch(
-    `http://localhost:3001/product/category/${id}`
+    `https://tienda-online-node.herokuapp.com/product/category/${id}`
   );
   const res = await categoriesId.json();
   productsByCategory(res);
