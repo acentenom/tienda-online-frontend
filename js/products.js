@@ -56,15 +56,15 @@ function searchProducts(res) {
     res.forEach((p) => {
       searchHTML = `
       <div class="col" style="width: 22rem;">
-      <div class="card">
-      <img src="${p.url_image}" class="card-img-top" alt="Imagen del producto.">
-      <div class="card-body">
-      <hr>
-        <h6 class="card-title">${p.name}</h6>
-        <p class="card-text">$ ${p.price}</p>
-      </div>
-      </div>
+    <div class="card">
+    <img src="${p.url_image}" class="card-img-top" alt="Imagen del producto.">
+    <div class="card-body">
+    <hr>
+      <h6 class="card-title">${p.name}</h6>
+      <p class="card-text">$ ${p.price}</p>
     </div>
+    </div>
+  </div>
     `;
       productsElement.innerHTML = productsElement.innerHTML + searchHTML;
     });
@@ -86,7 +86,6 @@ buttonSearch.forEach(function (btn) {
 });
 
 const consultCategoryById = async (id) => {
-  console.log("errorID",id)
   const categoriesId = await fetch(
     `https://tienda-online-node.herokuapp.com/product/category/${id}`
   );
@@ -98,7 +97,7 @@ function productsByCategory(res) {
   productsElement.innerHTML = "";
   res.forEach((p) => {
     const searchHTML = `
-    <div class="col">
+    <div class="col" style="width: 22rem;">
     <div class="card">
     <img src="${p.url_image}" class="card-img-top" alt="Imagen del producto.">
     <div class="card-body">
@@ -116,7 +115,6 @@ function productsByCategory(res) {
 const categorySearch = document.querySelectorAll(".nav-item navbar-nav");
 
 categorySearch.forEach(function (btn) {
-  console.log("objecterror", btn);
   btn.addEventListener("click", function (e) {
     const selector = `.${this.id}`;
     const allInputs = document.querySelectorAll(selector);
