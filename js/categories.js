@@ -10,8 +10,8 @@ function categoriesItem(res) {
   res.forEach((p) => {
     const categoryHTML = `
     <li class="nav-item">
-    <button class="nav-link active" onClick="consultCategoryById(${p.id})" href="" id='aLink'>${p.name}</button>
-    </li>
+			<a class="nav-link active" onClick="consultCategoryById(${p.id})" id='aLink' aria-current="page" href="#">${p.name}</a>
+		</li>
   `;
     categoriesElement.innerHTML = categoriesElement.innerHTML + categoryHTML;
   });

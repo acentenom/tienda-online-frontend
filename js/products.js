@@ -1,27 +1,35 @@
 const productsElement = document.querySelector(".cards");
 
+//Realizo la petición a la base de datos.
+
 const consultProducts = async () => {
   const allProducts = await fetch("https://tienda-online-node.herokuapp.com/product");
   const res = await allProducts.json();
   productCard(res);
 };
 
+//Muestra todos los productos en cartas.
+
 function productCard(res) {
   productsElement.innerHTML = "";
   res.forEach((p) => {
     const productsHTML = `
-    <div class="card" style="width: 18rem;">
-    <img src=${p.url_image} class="card-img-top" alt="..." width="380px" height="260px">
-    <hr>
+    <div class="col" style="width: 22rem;">
+    <div class="card">
+    <img src="${p.url_image}" class="card-img-top" alt="Imagen del producto.">
     <div class="card-body">
-      <p class="card-text">${p.name}</p>
+    <hr>
+      <h6 class="card-title">${p.name}</h6>
       <p class="card-text">$ ${p.price}</p>
+    </div>
     </div>
   </div>
   `;
     productsElement.innerHTML = productsElement.innerHTML + productsHTML;
   });
 }
+
+//Buscar prodcuto por nombre.
 
 const searchProduct = async (name) => {
   const searchProduct = await fetch(
@@ -30,6 +38,8 @@ const searchProduct = async (name) => {
   const response = await searchProduct.json();
   searchProducts(response);
 };
+
+//En caso de que el producto no sea encontrado.
 
 function searchProducts(res) {
   let searchHTML = "";
@@ -45,12 +55,14 @@ function searchProducts(res) {
     productsElement.innerHTML = "";
     res.forEach((p) => {
       searchHTML = `
-      <div class="card" style="width: 18rem;">
-      <img src=${p.url_image} class="card-img-top"  width="380px" height="260px">
-      <hr>
+      <div class="col" style="width: 22rem;">
+      <div class="card">
+      <img src="${p.url_image}" class="card-img-top" alt="Imagen del producto.">
       <div class="card-body">
-        <p class="card-text">${p.name}</p>
+      <hr>
+        <h6 class="card-title">${p.name}</h6>
         <p class="card-text">$ ${p.price}</p>
+      </div>
       </div>
     </div>
     `;
@@ -74,6 +86,7 @@ buttonSearch.forEach(function (btn) {
 });
 
 const consultCategoryById = async (id) => {
+  console.log("errorID",id)
   const categoriesId = await fetch(
     `https://tienda-online-node.herokuapp.com/product/category/${id}`
   );
@@ -85,12 +98,14 @@ function productsByCategory(res) {
   productsElement.innerHTML = "";
   res.forEach((p) => {
     const searchHTML = `
-    <div class="card" style="width: 18rem;">
-    <img src=${p.url_image} class="card-img-top" alt="..." width="380px" height="260px">
-    <hr>
+    <div class="col">
+    <div class="card">
+    <img src="${p.url_image}" class="card-img-top" alt="Imagen del producto.">
     <div class="card-body">
-      <p class="card-text">${p.name}</p>
+    <hr>
+      <h6 class="card-title">${p.name}</h6>
       <p class="card-text">$ ${p.price}</p>
+    </div>
     </div>
   </div>
   `;
@@ -98,11 +113,12 @@ function productsByCategory(res) {
   });
 }
 
-const categorySearch = document.querySelectorAll(".nav-item li");
+const categorySearch = document.querySelectorAll(".nav-item navbar-nav");
 
 categorySearch.forEach(function (btn) {
-  btn.addEventListener("click", function () {
-    const selector = `.${this.id} input`;
+  console.log("objecterror", btn);
+  btn.addEventListener("click", function (e) {
+    const selector = `.${this.id}`;
     const allInputs = document.querySelectorAll(selector);
 
     allInputs.forEach(async function (input) {

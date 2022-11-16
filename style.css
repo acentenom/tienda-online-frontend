@@ -1,31 +1,29 @@
+/* Cartas */
+
 .cards {
-    display: grid;
-    grid-template-columns: repeat(5, 50fr);
-    grid-gap: 20px;
-    justify-items: center;
-    padding: 20px;
-}
-
-.nav-link {
   display: flex;
   justify-content: center;
-  width: 150px;
-}
-:hover.nav-link {
-  color: brown;
+  margin: 20px;
+  padding: 20px;
 }
 
+.card-img-top {
+  width: 320px;
+  height: 320px;
+  }
 
-.titulo {
-  display: flex;
-  justify-content: center;
-  padding: 40px;
-}
+  .card {
+    width: 21.8rem;
+    height: 30rem;
+    border: solid black;
+    margin: auto;
+    padding: auto;
+  }
 
-.error {
-  position: absolute;
-  left: 750px;
-  padding: 70px 0;
-  font-size: 30px;
-  text-align: center;
+/* Adaptable (Responsive) */
+
+@media screen and (max-width: 700px) {
+  .cards {
+    max-width: 650px;
+  }
 }
