@@ -21,6 +21,10 @@
   }
 
   /* Navbar */
+  .navbar-brand {
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-size: 40px;
+  }
 
 .navbar-nav{
  padding-left: 1rem;
@@ -36,6 +40,41 @@
   width: auto;
 }
 
+
+/* Footer */
+
+.iconos-redes-sociales a {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales i {
+  color: #ffffff;
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales a:hover {
+  background-color: #ffffff;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.iconos-redes-sociales a:hover i {
+  color: rgb(0, 0, 0);
+}
+
+.derechos-de-autor {
+  font-size: 15px;
+  color: #f0f0f0;
+  padding: 20px;
+}
 
 
 /* Adaptable (Responsive) */

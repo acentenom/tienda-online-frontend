@@ -10,13 +10,17 @@
 		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	<link href="style.css" rel="stylesheet">
 	<link rel="icon" type="image/x-icon" href="imagenes/favicon.jpg">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 	<nav class="navbar navbar-expand-lg bg-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand text-white" onClick="consultProducts()" href="#">Tienda Online</a>
+			<a class="navbar-brand text-white" onClick="consultProducts()" href="#"> <i class="bi bi-shop"></i> Tienda Online</a>
 			<div>
 				<div class="seacrh">
 					<div class="boton d-flex" id="search">
@@ -35,7 +39,7 @@
 			<div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
 				<div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
 					<p href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-						<span class="fs-5 d-none d-sm-inline">Categorías</span>
+						<span class="letra fs-5 d-none d-sm-inline">Categorías</span>
 					</p>
 					<ul
 						class="nav-tabs navbar-nav nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start">
@@ -49,6 +53,20 @@
 		</div>
 	</div>
 
+	<footer class="d-flex flex-column align-items-center justify-content-center bg-dark">
+		<div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
+		  <a href="iconos-redes-sociales  https://github.com/acentenom" target="_blank" rel="noopener noreferrer">
+			<i class="bi bi-github"></i>
+		  </a>
+		  <a href="https://www.linkedin.com/in/alejandro-centeno-meza-57339524b/?original_referer=" target="_blank" rel="noopener noreferrer">
+			<i class="bi bi-linkedin"></i>
+		  </a>
+		  <a href="mailto:acentenom58@gmail.com" target="_blank" rel="noopener noreferrer">
+			<i class="bi bi-envelope"></i>
+		  </a>
+		</div>
+		<div class="derechos-de-autor row-cols-2">Alejandro Centeno(2022) &#169;</span>
+	  </footer>
 
 	<script src="js/products.js"></script>
 	<script src="js/categories.js"></script>
