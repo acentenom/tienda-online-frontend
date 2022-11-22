@@ -1,7 +1,7 @@
 const categoriesElement = document.querySelector(".navbar-nav");
 
 const consultCategories = async () => {
-  const allCategories = await fetch("https://tienda-online-node.herokuapp.com/category");
+  const allCategories = await fetch("http://localhost:3000/category");
   const res = await allCategories.json();
   categoriesItem(res);
 };

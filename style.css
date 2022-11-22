@@ -7,18 +7,47 @@
   padding: 20px;
 }
 
+.card-discount {
+display: flex;
+justify-content: flex-end;
+
+}
+
 .card-img-top {
-  width: 320px;
-  height: 320px;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
   }
 
   .card {
-    width: 21.8rem;
-    height: 30rem;
+    width: 17.2rem;
+    height: 27.5rem;
     border: solid black;
     margin: auto;
     padding: auto;
   }
+
+  .card-text {
+    margin: 2px;
+    font-weight: bold;
+  }
+
+.discount {
+  background-color: rgb(226, 198, 16);
+  width: 40px;
+  height: 60px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.valor {
+  position: relative;
+  top: 10px;
+  left: 200px;
+  padding: 4px;
+
+}
 
   /* Navbar */
   .navbar-brand {
@@ -40,6 +69,41 @@
   width: auto;
 }
 
+/* Error */
+
+.error-format {
+  display: flex;
+  flex-direction: column;
+}
+
+.error-icon {
+  display: flex;
+  font-size: 12em;
+  color: rgb(255, 0, 0);
+}
+
+
+.error {
+  position: relative;
+  right: 70px;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.error-button {
+  position: relative;
+  left: 34px;
+  font-size: 20px;
+  width: 120px;
+  height: 50px;
+  background-color: red;
+  color: azure;
+  border-radius: 10px;
+}
+
+.error-button:hover {
+  background-color: yellowgreen;
+}
 
 /* Footer */
 
